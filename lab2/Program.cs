@@ -64,7 +64,7 @@ namespace lab2
                         }
                         Console.WriteLine();
                     }
-
+ 
                     int MinValue = 99;
                     int MaxValue = 0;
                     int iMin = 0;

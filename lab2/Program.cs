@@ -49,7 +49,7 @@ namespace lab2
                         }
                         Console.WriteLine();
                     }
-                    else if (ChosenVariant == 2)
+                    else
                     {
                         int ElementOfMatrix = 0;
                         for (int i = 0; i < n; i++)

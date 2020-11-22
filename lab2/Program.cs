@@ -7,28 +7,33 @@ namespace lab2
         static void Main(string[] args)
         {
             Console.WriteLine("Введіть розмір квадратної матриці:");
+            int n = 0;
+            int m = 0;
             Console.Write("N = ");
-            int n = int.Parse(Console.ReadLine());
+            bool result1 = int.TryParse(Console.ReadLine(), out n);
             Console.Write("M = ");
-            int m = int.Parse(Console.ReadLine());
-
-            Console.WriteLine();
-
-            if (n != m)
+            bool result2 = int.TryParse(Console.ReadLine(), out m);
+            if (result1 == false || result2 == false)
+            {
+                Console.WriteLine("Помилка! Ви ввели некоректні дані!");
+            }
+            else if (n != m)
             {
                 Console.WriteLine("Матриця квадратна! Спробуйте ще раз!");
             }
             else
             {
                 Console.WriteLine("Натисніть 1, щоб згенерувати псевдовипадкову матрицю, або 2, щоб викорстати контрольний приклад:");
-                int ChosenVariant = int.Parse(Console.ReadLine());
-                Console.WriteLine();
-                if (ChosenVariant != 1 && ChosenVariant != 2)
+                int ChosenVariant = 0;
+                bool result = int.TryParse(Console.ReadLine(), out ChosenVariant);
+                if (result == false || (ChosenVariant != 1 && ChosenVariant != 2))
                 {
                     Console.WriteLine("Помилка! Переконайтесь, що ввели правильні дані!");
                 }
                 else
                 {
+                    Console.WriteLine();
+
                     // j - стовпець
                     // i - рядок
                     // D - діагональ

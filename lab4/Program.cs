@@ -72,7 +72,7 @@ namespace lab4
                     newNode.next = current.next;
                     current.next = newNode;
                     lengthOfList++;
-                }
+                } 
             }
             else
             {

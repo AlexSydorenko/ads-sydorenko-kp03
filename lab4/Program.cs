@@ -63,14 +63,14 @@ namespace lab4
                 }
                 else
                 {
-                    Node newN = new Node(data);
+                    Node newNode = new Node(data);
                     Node current = head;
                     for (int i = 1; i < position - 1; i++)
                     {
                         current = current.next;
                     }
-                    newN.next = current.next;
-                    current.next = newN;
+                    newNode.next = current.next;
+                    current.next = newNode;
                     lengthOfList++;
                 }
             }
@@ -481,7 +481,7 @@ namespace lab4
                 Console.WriteLine(" - виведення вмiсту списку");
             
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.Write("End");
+                Console.Write("Exit");
             Console.ResetColor();
                 Console.WriteLine(" - завершення програми");
 

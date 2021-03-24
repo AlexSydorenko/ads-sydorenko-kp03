@@ -40,13 +40,11 @@ namespace lab6
     {
         private string[] _items;
         private int _size;
-        // private string _top;
 
         public Stack()
         {
             _items = new string[16];
             _size = 0;
-            // _top = _items[_size];
         }
 
         public void Push(string item)
@@ -66,7 +64,6 @@ namespace lab6
                 throw new Exception("ERROR! Stack is empty!");
             }
             string buff = _items[_size-1];
-            // _top = _items[_size - 1];
             _items[_size-1] = null;
             _size--;
             return buff;
@@ -529,4 +526,3 @@ namespace lab6
         }
     }
 }
-

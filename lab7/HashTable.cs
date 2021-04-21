@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace lab7
@@ -19,7 +20,7 @@ namespace lab7
 
         public void InsertEntry(Key key, Value value)
         {
-            int hash = GetHash(key);
+            int hash = GetHash(HashCode(key));
             Flight flight = new Flight(key, value);
             table[hash].nodes.Add(flight);
             size++;
@@ -27,7 +28,7 @@ namespace lab7
 
         public bool RemoveEntry(Key key)
         {
-            int hash = GetHash(key);
+            int hash = GetHash(HashCode(key));
             Flight f = FindEntry(key);
             if (f != null)
             {
@@ -40,7 +41,7 @@ namespace lab7
 
         public Flight FindEntry(Key key)
         {
-            int hash = GetHash(key);
+            int hash = GetHash(HashCode(key));
 
             foreach (Flight item in table[hash].nodes)
             {
@@ -52,11 +53,22 @@ namespace lab7
             return null;
         }
 
-        public int GetHash(Key key)
+        public double HashCode(Key key)
         {
             char[] arr = key.ToString().ToCharArray();
-            int n = (int)arr[0] % table.Length;
-            return n;
+            int n = key.ToString().Length - 1;
+            double hash = 0;
+            for (int i = 0; i < key.ToString().Length; i++)
+            {
+                hash += (arr[i] * Math.Pow(26, n));
+                n--;
+            }
+            return hash;
+        }
+
+        public int GetHash(double key)
+        {
+            return (int)(key % table.Length);
         }
 
         public void Rehashing(ref Item[] table)
@@ -73,7 +85,7 @@ namespace lab7
             {
                 foreach (Flight item in oldTable[i].nodes)
                 {
-                    int hash = GetHash(item.key);
+                    int hash = GetHash(HashCode(item.key));
                     table[hash].nodes.Add(item);
                 }
             }
@@ -100,7 +112,7 @@ namespace lab7
 
         public bool ContainsKey(Key key)
         {
-            int hash = GetHash(key);
+            int hash = GetHash(HashCode(key));
             foreach (Flight item in table[hash].nodes)
             {
                 if (item.key.ToString() == key.ToString())
@@ -120,4 +132,3 @@ namespace lab7
         }
     }
 }
-

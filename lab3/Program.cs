@@ -13,12 +13,12 @@ namespace lab3
             bool result1 = int.TryParse(Console.ReadLine(), out n);
             Console.Write("M = ");
             bool result2 = int.TryParse(Console.ReadLine(), out m);
-            if (result1 == false || result2 == false)
+            if ((!result1 || !result2) || (n < 2 || m < 2))
             {
                 Console.WriteLine("Помилка! Переконайтесь, що ввели правильні дані!");
             }
             else
-            { 
+            {
                 int[,] originalMatrix = new int[n, m];
                 GetRandomMatrix(originalMatrix);
                 int[,] sortedMatrix = new int[n, m];

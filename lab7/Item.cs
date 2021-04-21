@@ -29,15 +29,6 @@ namespace lab7
             int currentTime = 0;
             DateTime dt = DateTime.Now;
             currentTime += dt.Year * 525600 + dt.Month * 43200 + dt.Day * 1440 + dt.Hour * 60 + dt.Minute;
-            // for (int i = 0; i < nodes.Count; i++)
-            // {
-            //     if (i == 0)
-            //     {
-            //         timeWhenDepartsTheLastFlight += nodes[i].value.departureTime.CountTimeToDepartInMinutes(nodes[i].value.isDelayed);
-            //         continue;
-            //     }
-            //     timeWhenDepartsTheLastFlight += nodes[i].value.isDelayed;
-            // }
             return timeWhenDepartsTheLastFlight - currentTime;
         }
 

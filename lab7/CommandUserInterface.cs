@@ -361,7 +361,6 @@ namespace lab7
 
             if (ht_allFlights.ContainsKey(new Key(key)))
             {
-                // Flight f = ht_allFlights.FindEntry(new Key(key));
                 ht_allFlights.RemoveEntry(new Key(key));
                 ht_byGates.RemoveEntry(new Key(key));
 

@@ -5,7 +5,6 @@ namespace lab7
     class GatesHashTable
     {
         private Item[] table;
-        // private int loadness;
         private int size;
 
         public GatesHashTable(int capacity)
@@ -20,7 +19,6 @@ namespace lab7
         public void InsertEntry(Key key, Flight flight)
         {
             int hash = GetHash(key);
-            // Flight flight = new Flight(key, value);
             table[hash].nodes.Add(flight);
             size++;
         }

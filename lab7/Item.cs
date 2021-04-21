@@ -25,7 +25,7 @@ namespace lab7
 
         public int FindTimeUntilFreeGate()
         {
-            int timeWhenDepartsTheLastFlight = nodes[nodes.Count - 1].value.departureTime.CountTimeToDepartInMinutes(nodes[nodes.Count - 1].value.isDelayed);
+            int timeWhenDepartsTheLastFlight = GetLastFlight().value.departureTime.CountTimeToDepartInMinutes(GetLastFlight().value.isDelayed);
             int currentTime = 0;
             DateTime dt = DateTime.Now;
             currentTime += dt.Year * 525600 + dt.Month * 43200 + dt.Day * 1440 + dt.Hour * 60 + dt.Minute;

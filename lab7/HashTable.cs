@@ -35,7 +35,7 @@ namespace lab7
                 size--;
                 return true;
             }
-            return true;
+            return false;
         }
 
         public Flight FindEntry(Key key)

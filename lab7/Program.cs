@@ -8,7 +8,7 @@ namespace lab7
         {
             HashTable ht_allFlights = new HashTable(8);
             GatesHashTable ht_byGates = new GatesHashTable(4);
-            CommandUserInterface.ProcessUsersRequests();
+            CommandUserInterface.ProcessUsersRequests(ht_allFlights, ht_byGates);
         }
     }
 

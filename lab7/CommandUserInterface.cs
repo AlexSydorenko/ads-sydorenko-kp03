@@ -5,11 +5,8 @@ namespace lab7
 {
     class CommandUserInterface
     {
-        public static void ProcessUsersRequests()
+        public static void ProcessUsersRequests(HashTable ht_allFlights, GatesHashTable ht_byGates)
         {
-            HashTable ht_allFlights = new HashTable(8);
-            GatesHashTable ht_byGates = new GatesHashTable(4);
-
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("Command list:");
             Console.ResetColor();

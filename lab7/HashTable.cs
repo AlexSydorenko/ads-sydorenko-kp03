@@ -132,3 +132,13 @@ namespace lab7
         }
     }
 }
+
+
+
+
+// public int GetHash(Key key)
+// {
+//     char[] arr = key.ToString().ToCharArray();
+//     int n = (int)arr[0] % table.Length;
+//     return n;
+// }
